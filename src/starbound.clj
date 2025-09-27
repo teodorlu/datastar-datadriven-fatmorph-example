@@ -80,9 +80,13 @@
     (datastar-httpkit/->sse-response
      req
      {datastar-httpkit/on-open
-      #(swap! sse-connections assoc id [(-> (get headers "referer") (lambdaisland.uri/uri) :path) %])
+      (fn [sse]
+        (prn [id ::on-open])
+        (swap! sse-connections assoc id [(-> (get headers "referer") (lambdaisland.uri/uri) :path) sse]))
       datastar-httpkit/on-close
-      #(swap! sse-connections dissoc id)})))
+      (fn [& args]
+        (prn [id ::on-close])
+        (swap! sse-connections dissoc id))})))
 
 (defn handler [system {:as req :keys [uri]}]
   (let [state (system->state system)]
