@@ -1,6 +1,6 @@
 {:paths ["src" "resources"]
- :deps {dev.data-star.clojure/http-kit {:mvn/version "1.0.0-RC1"}
-        dev.data-star.clojure/sdk {:mvn/version "1.0.0-RC1"}
+ :deps {dev.data-star.clojure/http-kit {:mvn/version "1.0.0-RC3"}
+        dev.data-star.clojure/sdk {:mvn/version "1.0.0-RC3"}
         http-kit/http-kit {:mvn/version "2.8.1"}
         lambdaisland/kaocha {:mvn/version "1.91.1392"}
         lambdaisland/uri {:mvn/version "1.19.155"}
